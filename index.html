@@ -6,7 +6,7 @@
         content="Customizing Textile and Tactile Skins for Interactive Industrial Robots enhances robot-human interaction by localizing contact points and measuring contact forces.">
   <meta name="keywords" content="Tactile skin, Textile skin, Industrial robots, Human-robot interaction">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Customizing Textile and Tactile Skins for Interactive Industrial Robots</title>
+  <title>Optimizing Multi-Touch Textile and Tactile Skin Sensing Through Circuit Parameter Estimation</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -68,17 +68,14 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Customizing Textile and Tactile Skins for Interactive Industrial Robots</h1>
+          <h1 class="title is-1 publication-title">Optimizing Multi-Touch Textile and Tactile Skin Sensing Through Circuit Parameter Estimation</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="#">Bo Ying Su</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="#">Zhongqi Wei</a><sup>1</sup>,</span>
+              <a href="#">Yuchen Wu</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="#">James McCann</a><sup>1</sup>,
-            </span>
-            <span class="author-block">
-              <a href="#">Wenzhen Yuan</a><sup>1</sup>,
+              <a href="#">Chengtao Wen</a><sup>2</sup>,
             </span>
             <span class="author-block">
               <a href="#">Changliu Liu</a><sup>1</sup>
@@ -87,6 +84,7 @@
 
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>Carnegie Mellon University</span>
+            <span class="author-block"><sup>2</sup>Siemens Corporate Technology</span>
           </div>
 
           <div class="column has-text-centered">
@@ -102,7 +100,7 @@
                 </a>
               </span> -->
               <span class="link-block">
-                <a href="https://arxiv.org/pdf/2308.03072"
+                <a href="https://arxiv.org/pdf/2404.15131"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -112,7 +110,7 @@
               </span>
               <!-- Video Link. -->
               <span class="link-block">
-                <a href="https://www.youtube.com/embed/YGUV1dHuCRc"
+                <a href="https://www.youtube.com/embed/_Y4WtaJrH1I"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-youtube"></i>
@@ -155,7 +153,7 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Video</h2>
         <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/YGUV1dHuCRc?rel=0&amp;showinfo=0"
+          <iframe src="https://www.youtube.com/embed/_Y4WtaJrH1I?rel=0&amp;showinfo=0"
                   frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
       </div>
@@ -171,10 +169,10 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Tactile skins made from textiles enhance robot-human interaction by localizing contact points and measuring contact forces. This paper presents a solution for rapidly fabricating, calibrating, and deploying these skins on industrial robot arms.
+            Tactile and textile skin technologies have become increasingly important for enhancing human-robot interaction and allowing robots to adapt to different environments. Despite notable advancements, there are ongoing challenges in skin signal processing, particularly in achieving both accuracy and speed in dynamic touch sensing.
           </p>
           <p>
-            The novel automated skin calibration procedure maps skin locations to robot geometry and calibrates contact force. Through experiments on a FANUC LR Mate 200id/7L industrial robot, we demonstrate that tactile skins made from textiles can be effectively used for human-robot interaction in industrial environments, and can provide unique opportunities in robot control and learning, making them a promising technology for enhancing robot perception and interaction.
+            This paper introduces a new framework that poses the touch sensing problem as an estimation problem of resistive sensory arrays. Utilizing a Regularized Least Squares objective function—which estimates the resistance distribution of the skin—we enhance the touch sensing accuracy and mitigate the ghosting effects, where false or misleading touches may be registered. Furthermore, our study presents a streamlined skin design that simplifies manufacturing processes without sacrificing performance. Experimental outcomes substantiate the effectiveness of our method, showing 26.9% improvement in multi-touch force-sensing accuracy for the tactile skin.
           </p>
         </div>
       </div>
@@ -189,20 +187,14 @@
       <!-- Combined Fabrication and Calibration section with single image -->
       <div class="column">
         <div class="content">
-          <h2 class="title is-3">Skin Fabrication and Calibration</h2>
-          <p>
-            The textile and tactile skin consists of three layers of fabric in a sandwich structure. The top and bottom layers contain alternating conductive and non-conductive stripes placed orthogonally, while the middle layer is formed by a mesh that separates the top and bottom layers.
-          </p>
-          <p>
-            When pressure is applied to the skin, the top and bottom layers are stretched, causing the conductive stripes to touch each other and complete the circuit. The resistance, which is inversely correlated to the touching area of the top and bottom layers, is then recorded by an Arduino microcontroller.
-          </p>
-          <p>
-            To localize the skin and calibrate pressure measurement, we use a force torque sensor attached to a fixed tripod. Data collection involves the robot approaching the sensor and actively touching it with the skin, generating a skin-traversal trajectory through Poisson-disc sampling.
-          </p>
-          <p>
-            Using this method, we achieved a contact localization root mean square error (RMSE) of 3.00 cm and a force prediction RMSE of 1.36 N, which is a significant improvement over naive scaling methods.
-          </p>
-          <img src="./static/images/farb_calib.png" width="100%" alt="Skin Fabrication and Calibration Process">
+          <h2 class="title is-3">Overview</h2>
+          <div class="content has-text-centered">
+            <img src="./static/images/paper-overview.png" width="70%" alt="Overview of our proposed tactile skin sensing method">
+            <p class="caption">
+              An overview of our proposed tactile skin sensing method. (a) Two textile pieces with conductive stripes are separately knitted.
+              (b) The two textile pieces are sewn together orthogonally to create a grid of sensing cells. (c) The skin is modeled as a resistive sensory array. Our approach predicts force applied on the skin by estimating cell resistances using an Arduino board.
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -210,43 +202,14 @@
     <!-- Control Applications. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Control Applications</h2>
-        
-        <!-- Add the skin control framework image at the top of Control Applications section -->
+        <h2 class="title is-3">Challenges in Tactile Sensing</h2>
         <div class="content has-text-centered">
-          <img src="./static/images/skin-control-framework.png" width="90%" alt="Skin Control Framework">
-        </div>
-
-        <!-- Trajectory Modification. -->
-        <h3 class="title is-4">Trajectory Modification from Human Feedback</h3>
-        <div class="content has-text-justified">
-          <p>
-            Skin-enabled controllers can efficiently detect the contact position and generate new trajectories that minimize disruption to the robot's original motion. We formulate the trajectory modification problem as a quadratic program (QP) to minimize the velocity difference between the original and modified trajectories while ensuring that the robot follows human's commands.
-          </p>
-          <p>
-            Our experiments show that when human touches the robot, the skin successfully localizes the point of contact, and the robot's trajectory is immediately modified to reduce the Cartesian velocity in the direction of the contact to zero.
+          <img src="./static/images/ghosting-voltage.png" width="50%" alt="Ghosting Effects and Ohmmeter Configurations">
+          <p class="caption">
+            (a) Ghosting effects occur when an alternate path of current (shown in green) is formed for the sensing cell at the upper left corner.
+            (b) Ohmmeter Configurations used in our approach.
           </p>
         </div>
-        <!-- Add the trajectory modification image -->
-        <div class="content has-text-centered">
-          <img src="./static/images/traj-mod.png" width="75%" alt="Trajectory Modification Results">
-        </div>
-        
-        <!-- Admittance Control. -->
-        <h3 class="title is-4">Skin-Enabled Admittance Control</h3>
-        <div class="content has-text-justified">
-          <p>
-            Skin-enabled admittance control solves the limitation of traditional joint torque sensors by dynamically regulating the forces applied to the contact point. Unlike joint torque sensors, which cannot distinguish forces applied to different joints in the multi-joint, multi-contact case, the skin-enabled admittance control measure contact force and location on the robot surface and allows each joint to respond independently to contacts.
-          </p>
-          <p>
-            With skin-enabled admittance control, the interactive force profiles between humans and robots are smoother. The human operator can interact with the robot in a more intuitive manner and provide rich contact information for learning from human feedback.
-          </p>
-        </div>
-        <!-- Add the admittance control image -->
-        <div class="content has-text-centered">
-          <img src="./static/images/admittance-control.png" width="75%" alt="Admittance Control Results">
-        </div>
-        
       </div>
     </div>
     <!--/ Control Applications. -->
@@ -254,26 +217,10 @@
     <!-- Related Work. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Related Work</h2>
-
+        <h2 class="title is-3">Resistance Estimation</h2>
         <div class="content has-text-justified">
           <p>
-            Robot control in interactive tasks heavily relies on available sensors:
-          </p>
-          <p>
-            <b>Force Torque Sensors (FTS)</b> can measure contact force and torque but cannot localize the contact position.
-          </p>
-          <p>
-            <b>Robot joint motor measurements</b> can estimate external force and detect collisions, but do not localize the contact positions.
-          </p>
-          <p>
-            <b>Vision-based systems</b> can localize contact but do not detect force and suffer from occlusion.
-          </p>
-          <p>
-            <b>Light curtains</b> do not suffer from occlusion but can not be easily retrofitted onto complex geometries.
-          </p>
-          <p>
-            <b>Commercial tactile skins</b> like T-skin are available to enhance robot safety, but they are costly and may not be suitable for intricate human-robot interaction tasks.
+            Our approach to multi-touch force sensing using textile-based tactile skin comprises two stages: calibration and estimation. Given the readout data acquired from the Ohmmeter circuit, we estimate the cell resistances of the skin using our proposed resistance estimation algorithm and fit them to simple linear regression models for each cell.
           </p>
         </div>
       </div>
@@ -282,14 +229,89 @@
   </div>
 </section>
 
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <!-- Combined Fabrication and Calibration section with single image -->
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">Simulation Results</h2>
+          <div class="columns is-centered">
+            <div class="column">
+              <div class="content has-text-centered">
+                <img src="./static/images/simulation-wiresweep.png" width="50%" alt="Simulation results for varying wire resistances">
+                <p class="caption">
+                  Simulation results for varying wire resistances in tactile skin. Our method reduces ghosting effects compared to naive solutions.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="columns is-centered">
+            <div class="column">
+              <div class="content has-text-centered">
+                <img src="./static/images/simulation-cellsweep.png" width="50%" alt="Simulation results for variable cell resistances">
+                <p class="caption">
+                  Simulation results for tactile skin with variable cell resistances. Our optimization approach achieves lower error rates.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Control Applications. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Experimental Results</h2>
+        <div class="columns is-centered">
+          <div class="column">
+            <div class="content has-text-centered">
+              <img src="./static/images/setup-sensitivity.png" width="70%" alt="Force Estimation experiment setup">
+              <p class="caption">
+                The Force Estimation experiment setup. (a) flat surface experiment setup, (b) curved surface experiment, and (c) two-layer design of the skin allows detection of forces as low as 1N.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="columns is-centered">
+          <div class="column">
+            <div class="content has-text-centered">
+              <img src="./static/images/flat-error-bar.png" width="90%" alt="Flat Surface Experiment Results">
+              <p class="caption">
+                Flat Surface Experiment. Our method achieved 27.3% lower multi-touch error compared to the naive approach.
+              </p>
+            </div>
+          </div>
+          <div class="column">
+            <div class="content has-text-centered">
+              <img src="./static/images/curved-error-bar.png" width="90%" alt="Curved Surface Experiment Results">
+              <p class="caption">
+                Curved Surface Experiment. Our method achieved 26.4% lower multi-touch error compared to the naive approach.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="columns is-centered">
+          <div class="column">
+            <div class="content has-text-centered">
+              <img src="./static/images/flat-line-solved.png" width="50%" alt="Time series data">
+              <p class="caption">
+                Time series data showing our algorithm effectively mitigating ghosting effects caused by force applied on the same row or column.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{su2023customizing,
-  author    = {Su, Bo Ying and Wei, Zhongqi and McCann, James and Yuan, Wenzhen and Liu, Changliu},
-  title     = {Customizing Textile and Tactile Skins for Interactive Industrial Robots},
-  journal   = {Modeling, Estimation, and Control Conference (MECC)},
+    <pre><code>@article{su2023optimizing,
+  author    = {Su, Bo Ying and Wu, Yuchen and Wen, Chengtao and Liu, Changliu},
+  title     = {Optimizing Multi-Touch Textile and Tactile Skin Sensing Through Circuit Parameter Estimation},
+  journal   = {IEEE},
   year      = {2023},
 }</code></pre>
   </div>
